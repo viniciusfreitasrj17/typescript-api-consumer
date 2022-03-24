@@ -18,7 +18,6 @@ SUFFIXURL
 > case have suffix
 
 <br>
-
 Ex:
 
     BASEURL=https://pokeapi.co/api/v2
