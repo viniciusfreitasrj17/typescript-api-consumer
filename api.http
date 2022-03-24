@@ -1,1 +1,13 @@
-GET http://localhost:3000/1
+POST https://google-translate1.p.rapidapi.com/language/translate/v2/detect
+content-type: application/x-www-form-urlencoded
+Accept-Encoding: application/gzip
+X-RapidAPI-Host: google-translate1.p.rapidapi.com
+X-RapidAPI-Key: 00xx00
+
+q=je%20t'aime
+
+###
+POST http://localhost:3000/
+content-type: application/x-www-form-urlencoded
+
+q=Ich%20liebe%20dich

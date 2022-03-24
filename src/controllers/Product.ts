@@ -1,18 +1,20 @@
 import { Request, Response } from "express";
+import  qs from 'qs';
 import api from "../api";
 
-const index = async (req: Request, res: Response): Promise<Response> => {
+const show = async (req: Request, res: Response): Promise<Response> => {
   try {
-    const _id = req.params.id
-    const { data } = await api.get(`/${_id}`)
+    const { body } = req
+    let parseBody = qs.stringify(body);
+    const { data } = await api.post(`/`, parseBody)
 
     return res.status(200).json({ data })
   } catch (error) {
     console.log({ error })
-    return res.status(400).json({ error: 500 })
+    return res.status(500).json({ error: 500 })
   }
 }
 
 export {
-  index,
+  show,
 }
